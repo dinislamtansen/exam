@@ -1,5 +1,6 @@
 
 import { Link } from "react-router-dom";
+import AddToCartPage from "./AddToCartPage";
 
 
 function Card({info}) {
@@ -21,7 +22,7 @@ function Card({info}) {
     <p>Price: {price}</p>
     <p>Rating: {rate}</p>
     <div className="card-actions justify-end">
-      <Link to={`/product/${id}`}><button className="btn btn-primary">Add to cart</button></Link>
+      <Link to={`/product/${id}`}><button className="btn btn-primary" onClick={AddToCartPage}>Add to cart</button></Link>
       
     </div>
   </div>

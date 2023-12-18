@@ -7,16 +7,16 @@ import { DataContext } from "./ContextApi/DataContext";
 
 const Navbar = () => {
 
-  const {loginWithPopup, isAuthenticated , user ,isLoading ,error} = useAuth0();
+  const {loginWithPopup, isAuthenticated , user ,isLoading } = useAuth0();
 
   console.log(user)
   const {loginUser,setLoginUser}=useContext(DataContext)
   if (isLoading) {
     return <div>Loading...</div>;
   }
-  if (error) {
-    return <div>Oops... {error.message}</div>;
-  }
+ 
+
+  
   
   
 

@@ -1,4 +1,4 @@
-import { Route,Routes } from 'react-router-dom'
+import { Form, Route,Routes } from 'react-router-dom'
 
 
 import './App.css'
@@ -6,9 +6,9 @@ import Home from './Home'
 import Navbar from './Navbar'
 import Card from './Card'
 
-import Contact from './Contact'
-import Productdetails from './Productdetails'
 
+import AddToCartPage from './AddToCartPage'
+import MyForm from './MyForm'
 
 
 function App () {
@@ -23,10 +23,11 @@ function App () {
   <Route  path='/'  element= {<Home/>}/>
   <Route  path='/*'  element= {<Home/>}/>
  
-  <Route  path="/product/:id"  element= {<Productdetails/>}/>
-  <Route  path='/contact'  element= {<Contact/>}/>
+  <Route  path="/product/:id"  element= {<AddToCartPage/>}/>
+  
 
   <Route  path='/card'  element= {<Card/>}/>
+  <Route path='/contact' element={<MyForm/>}/>
   
   
 </Routes>
