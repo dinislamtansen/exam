@@ -5,20 +5,23 @@ import { Link } from "react-router-dom";
 function Card({info}) {
 
 
-  const { category,title,id,  image, rating:{rate}}= info
+  const { category,title,id, price, image, rating:{rate}}= info
 
 
   return (
 
     <>
     <div className="card w-96  bg-base-100 shadow-xl">
-  <figure ><img src={image} alt="Shoes"  /></figure>
+  <div className=" flex justify-center">
+  <img src={image} alt="Shoes" width={150} height={150} />
+  </div>
   <div className="card-body">
     <h2 className="card-title">{category}</h2>
-    <p>{title}</p>
-    <p>{rate}</p>
+    <p>Name: {title}</p>
+    <p>Price: {price}</p>
+    <p>Rating: {rate}</p>
     <div className="card-actions justify-end">
-      <Link to={`/product/${id}`}><button className="btn btn-primary">Details</button></Link>
+      <Link to={`/product/${id}`}><button className="btn btn-primary">Add to cart</button></Link>
       
     </div>
   </div>

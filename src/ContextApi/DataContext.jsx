@@ -8,13 +8,16 @@ export const DataContext=createContext()
  export const DataProvider=({children})=>{
 
 const [data,setData]=useState("ripon")
+const[loginUser,setLoginUser]=useState({})
 
-const info={data,setData}
-console.log(data)
+
+
+
+
 
 
 return(
-<DataContext.Provider value={info}>
+<DataContext.Provider value={{data,setData,loginUser,setLoginUser}}>
     {children}
 
 </DataContext.Provider>

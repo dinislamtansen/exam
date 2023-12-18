@@ -1,6 +1,27 @@
 import { Link } from "react-router-dom"
+import { useAuth0 } from "@auth0/auth0-react"
+import { useContext } from "react";
+import { DataContext } from "./ContextApi/DataContext";
+
+
 
 const Navbar = () => {
+
+  const {loginWithPopup, isAuthenticated , user ,isLoading ,error} = useAuth0();
+
+  console.log(user)
+  const {loginUser,setLoginUser}=useContext(DataContext)
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+  if (error) {
+    return <div>Oops... {error.message}</div>;
+  }
+  
+  
+
+
+
   return (
     <>
    <div className="navbar bg-base-100">
@@ -32,7 +53,8 @@ const Navbar = () => {
     </ul>
   </div>
   <div className="navbar-end">
-    <a className="btn">Button</a>
+    <a  onClick={() => loginWithPopup()} className="btn">Login</a>
+    <a className="btn border border-l border-solid">Signup</a>
   </div>
 </div>
     </>

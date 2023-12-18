@@ -1,9 +1,14 @@
-import { useEffect } from "react"
+import {  useEffect } from "react"
 import { useState } from "react"
 import Card from "./Card"
 
 
+
+
 function Home(){
+  
+
+
 
   const [store, setStore]=useState([])
 
